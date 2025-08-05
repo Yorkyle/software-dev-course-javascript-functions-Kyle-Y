@@ -32,6 +32,7 @@ This activity reinforces:
 // ❌ Original Code (Before Refactoring)
 // ============================================
 
+/*
 // Script 1 - Greeting multiple users
 console.log("Welcome, Alice!");
 console.log("Welcome, Bob!");
@@ -50,9 +51,9 @@ console.log("The product of 5 and 10 is " + product);
 let names = ["Alice", "Bob", "Charlie"];
 console.log("Names in the list:");
 for (let i = 0; i < names.length; i++) {
-    console.log(names[i]);
+   console.log(names[i]);
 }
-
+*/
 /*
 ===========================================
 🛠️ Steps for Refactoring
@@ -72,3 +73,47 @@ for (let i = 0; i < names.length; i++) {
 */
 
 // ✅ Your refactored code goes below this line!
+
+// Refactored Script 1 - Greeting multiple users
+// I need a function that makes a greeting designed to be attached to a name, one that can be modified universally, not individually.
+
+function greet(name) {
+   return `Welcome, ${name}!`;
+}
+
+console.log(greet("Alice"));
+console.log(greet("Bob"));
+console.log(greet("Charlie"));
+
+// Refactored Script 2 - Sum calculation
+
+function addNumbers(num1, num2) {
+   return num1 + num2;
+};
+
+let num1 = 5;
+let num2 = 10;
+
+console.log(`The sum of ${num1} and ${num2} is ${addNumbers(num1, num2)}`);
+
+// Refactored Script 3 - Product calculation
+
+function findProduct(firstNum, secondNum) {
+   let product = firstNum * secondNum;
+   console.log(`The product of ${firstNum} and ${secondNum} is ${product}`);
+}
+
+findProduct(5, 10);
+
+
+// Refactored Script 4 - Print names from a list
+
+function printNames(nameArray) {
+   console.log("Names in the list:");
+   for (let name of nameArray) {
+      console.log(name);
+   }
+}
+
+let nameArray = ["Alice", "Bob", "Charlie"];
+printNames(nameArray);
