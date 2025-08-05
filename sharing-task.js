@@ -37,6 +37,17 @@ reusable functions that solve specific tasks. This activity encourages:
 // 4. Return the result.
 
 
+function capitalizeRole(role) {
+    return role.charAt(0).toUpperCase() + role.slice(1).toLowerCase();
+}
+
+function generateBadge(name, role) {
+    let capitalizedRole = capitalizeRole(role); //variable has adj, function has verb
+    return `Name: ${name}, Role: ${capitalizedRole}`;
+}
+
+console.log(generateBadge("Alice", "speaker"));
+
 // ============================================
 // 🧩 Task 2: Calculate Event Cost
 // ============================================
@@ -50,6 +61,31 @@ reusable functions that solve specific tasks. This activity encourages:
 // 2. Check if attendee count is over 100.
 // 3. If so, apply a 10% discount.
 // 4. Return the final total.
+
+function numberAttendees(attendees, ticketCost) {
+    return attendees * ticketCost;
+}
+
+function verifyAttendeeStatus(attendees) {
+    return attendees >= 100;
+}
+
+function applyAttendeeDiscount(originalCost,) {
+    if (metPromoReq) {
+        return originalCost * 0.9;
+    } else {
+        return originalCost;
+    }
+}
+
+let attendees = 111
+let ticketCost = 40
+
+let originalCost = numberAttendees(attendees, ticketCost);
+let metPromoReq = verifyAttendeeStatus(attendees);
+let finalTotal = applyAttendeeDiscount(originalCost, metPromoReq);
+
+console.log(`Final cost for ${attendees} attendees after applicable discounts: $${finalTotal}`);
 
 
 // ============================================
