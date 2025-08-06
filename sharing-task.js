@@ -70,7 +70,7 @@ function verifyAttendeeStatus(attendees) {
     return attendees >= 100;
 }
 
-function applyAttendeeDiscount(originalCost,) {
+function applyAttendeeDiscount(originalCost, metPromoReq) {
     if (metPromoReq) {
         return originalCost * 0.9;
     } else {
@@ -100,6 +100,21 @@ console.log(`Final cost for ${attendees} attendees after applicable discounts: $
 // 1. Check if the string includes both "@" and ".".
 // 2. Return true or false accordingly.
 
+
+function hasEmailMarkers(email) {
+    return email.includes("@") && email.includes(".");
+}
+
+function isValid(email) {
+    if (hasEmailMarkers(email)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+let email = "example@hotmail.com";
+console.log(hasEmailMarkers(email));
 
 // ============================================
 // 🧠 Collaborative Steps
